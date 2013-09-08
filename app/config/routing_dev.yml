@@ -12,3 +12,7 @@ _configurator:
 
 _main:
     resource: routing.yml
+
+_draggy:
+    resource: "@DraggyBundle/Resources/config/routing.yml"
+    prefix:   /_draggy/

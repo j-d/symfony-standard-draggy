@@ -1,3 +1,6 @@
+imports:
+    - { resource: parameters_draggy.yml }
+
 parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
