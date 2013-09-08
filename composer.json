@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "jd/symfony-standard-draggy",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "The \"Symfony Standard Edition\" distribution with Draggy bundled",
     "autoload": {
         "psr-0": { "": "src/" }
     },
