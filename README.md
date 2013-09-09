@@ -2,7 +2,7 @@ Symfony Standard Edition + Draggy
 =================================
 
 Draggy is a code development tool and template engine that enables the user to create and maintain a functional
-Skelleton of an application.
+Skeleton of an application.
 
 On this bundle you can download the current Symfony2 Standard Edition with Draggy bundled onto it. It is the same as
 if you downloaded the [Symfony Standard Edition](https://github.com/symfony/symfony-standard) and then followed
