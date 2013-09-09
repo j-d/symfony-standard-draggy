@@ -21,7 +21,7 @@ curl -s https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ```
 ```
-composer create-project jd/symfony-standard-draggy /path/to/webroot/ master
+sudo composer create-project jd/symfony-standard-draggy /path/to/webroot/ master
 ```
 
 Installation (for dummies)
@@ -29,7 +29,7 @@ Installation (for dummies)
 Make sure you have all the necessary dependencies installed:
 
 ```
-sudo apt-get install git apache2 php5 php5-sqlite php-apc php5-intl mysql-server php5-mysql phpmyadmin php-apc php5-intl curl
+sudo apt-get install git apache2 php5 php5-sqlite php-apc php5-intl mysql-server php5-mysql phpmyadmin php-apc php5-intl curl acl
 ```
 
 Install composer (You can find how to install Composer here: [Composer](http://getcomposer.org/doc/00-intro.md))
@@ -40,12 +40,19 @@ curl -s https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ```
 ```
-composer create-project jd/symfony-standard-draggy /var/www/draggy/ master
+sudo composer create-project jd/symfony-standard-draggy /var/www/draggy/ master
 ```
 
 If it is the first Symfony project you install on the machine, is going to take a few minutes.
 It will eventually ask you to configure the parameters. Just accept the default values, but make sure that 
 the MySQL password `database_password` is correct.
+
+Next you have to give www-data some permissions on some folders for Symfony to work and for the model to be saved:
+```
+cd /var/www/draggy/
+sudo setfacl -R  -m u:www-data:rwx -m u:`whoami`:rwx app/cache app/logs doc doc/history
+sudo setfacl -dR -m u:www-data:rwx -m u:`whoami`:rwx app/cache app/logs doc doc/history
+```
 
 Next, create the database for the project:
 
